@@ -6,10 +6,16 @@ export function parentList({ parentTitle, childTitle, childItems }) {
     .child(S.list().title(childTitle).items(childItems));
 }
 
-export function childItem({ name, title }) {
+// singleton, ex: website settings
+export function singleChildItem({ name, title }) {
   return S.listItem()
     .title(title)
     .child(S.document().schemaType(name).documentId(name));
+}
+
+// multi-record document, ex: project, article, page, author
+export function multiChildItem({ name, title }) {
+  return S.listItem().title(title).child(S.documentTypeList(name));
 }
 
 export function listNames(list) {

@@ -1,5 +1,5 @@
 export default {
-  name: "db",
+  name: "database",
   title: "Database",
   type: "document",
   fields: [

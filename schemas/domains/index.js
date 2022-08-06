@@ -19,3 +19,26 @@ export default [
   page,
   author,
 ];
+
+export const displayDomains = [
+  {
+    title: "Project",
+    name: "project",
+  },
+  {
+    title: "Article",
+    name: "article",
+  },
+  {
+    title: "Toy",
+    name: "toy",
+  },
+  {
+    title: "Page",
+    name: "page",
+  },
+  {
+    title: "Author",
+    name: "author",
+  },
+];

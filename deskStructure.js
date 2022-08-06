@@ -2,10 +2,12 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { displaySettings } from "./schemas/settings";
 import { displayCategories } from "./schemas/categories";
-import { parentList, childItem, filterDocuments } from "./deskUtils";
+import { displayDomains } from "./schemas/domains";
 
-const structuredSettings = displaySettings.map((s) => childItem(s));
-const structuredCategories = displayCategories.map((s) => childItem(s));
+import { parentList, singleChildItem, multiChildItem } from "./deskUtils";
+
+const structuredSettings = displaySettings.map((s) => singleChildItem(s));
+const structuredCategories = displayCategories.map((s) => multiChildItem(s));
 
 const settings = parentList({
   parentTitle: "Settings",
@@ -19,9 +21,9 @@ const categories = parentList({
   childItems: structuredCategories,
 });
 
-const documents = filterDocuments([displaySettings, displayCategories]);
+const domains = displayDomains.map((s) => multiChildItem(s));
 
 export default () =>
   S.list()
     .title("Base")
-    .items([...documents, S.divider(), categories, settings]);
+    .items([...domains, S.divider(), categories, settings]);
