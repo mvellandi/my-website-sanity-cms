@@ -7,9 +7,8 @@ export default {
       name: "heading",
       type: "string",
       title: "Heading",
-      options: {
-        list: [{ value: "Tech / Design", title: "Tech / Design" }],
-      },
+      initialValue: "Tech / Design",
+      readOnly: true,
     },
     {
       name: "body",

@@ -1,3 +1,5 @@
+import sectionTemplate from "./project/sectionTemplate";
+
 export default {
   name: "project",
   type: "document",
@@ -33,9 +35,10 @@ export default {
       name: "sections",
       type: "array",
       title: "Sections",
+      initialValue: sectionTemplate,
       of: [
         {
-          type: "projectSection",
+          type: "projectTopic",
         },
         {
           type: "projectStructure",

@@ -1,7 +1,7 @@
 export default {
-  name: "projectSection",
+  name: "projectTopic",
   type: "object",
-  title: "Project Section",
+  title: "Project Topic",
   fields: [
     {
       name: "heading",
