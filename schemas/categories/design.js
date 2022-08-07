@@ -1,5 +1,5 @@
 export default {
-  name: "design",
+  name: "category_design",
   title: "Design",
   type: "document",
   fields: [

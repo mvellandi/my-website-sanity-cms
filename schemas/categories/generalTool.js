@@ -1,5 +1,5 @@
 export default {
-  name: "generalTool",
+  name: "category_generalTool",
   title: "General Tool",
   type: "document",
   fields: [

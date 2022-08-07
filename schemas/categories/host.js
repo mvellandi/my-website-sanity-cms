@@ -1,5 +1,5 @@
 export default {
-  name: "host",
+  name: "category_host",
   title: "Host",
   type: "document",
   fields: [

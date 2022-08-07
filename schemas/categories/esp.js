@@ -1,5 +1,5 @@
 export default {
-  name: "esp",
+  name: "category_esp",
   title: "ESP",
   type: "document",
   fields: [

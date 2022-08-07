@@ -1,5 +1,5 @@
 export default {
-  name: "codeLanguage",
+  name: "category_codeLanguage",
   title: "Code Language",
   type: "document",
   fields: [

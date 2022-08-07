@@ -1,5 +1,5 @@
 export default {
-  name: "testing",
+  name: "category_testing",
   title: "Testing",
   type: "document",
   fields: [

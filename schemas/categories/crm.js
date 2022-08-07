@@ -1,5 +1,5 @@
 export default {
-  name: "crm",
+  name: "category_crm",
   title: "CRM",
   type: "document",
   fields: [

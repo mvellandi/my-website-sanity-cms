@@ -1,5 +1,5 @@
 export default {
-  name: "codeLibrary",
+  name: "category_codeLibrary",
   title: "Code Library",
   type: "document",
   fields: [

@@ -28,46 +28,46 @@ export default [
 export const displayCategories = [
   {
     title: "App Framework",
-    name: "app",
+    name: "category_app",
   },
   {
     title: "CMS",
-    name: "cms",
+    name: "category_cms",
   },
   {
     title: "Code Language",
-    name: "codeLanguage",
+    name: "category_codeLanguage",
   },
   {
     title: "Code Library",
-    name: "codeLibrary",
+    name: "category_codeLibrary",
   },
   {
     title: "CRM",
-    name: "crm",
+    name: "category_crm",
   },
   {
     title: "Database",
-    name: "database",
+    name: "category_database",
   },
   {
     title: "Design",
-    name: "design",
+    name: "category_design",
   },
   {
     title: "ESP",
-    name: "esp",
+    name: "category_esp",
   },
   {
     title: "General Tool",
-    name: "generalTool",
+    name: "category_generalTool",
   },
   {
     title: "Host",
-    name: "host",
+    name: "category_host",
   },
   {
     title: "Testing",
-    name: "testing",
+    name: "category_testing",
   },
 ];

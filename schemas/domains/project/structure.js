@@ -4,16 +4,16 @@ export default {
   title: "Project Structure",
   fields: [
     {
-      name: "heading",
+      name: "title",
       type: "string",
-      title: "Heading",
+      title: "Title",
       initialValue: "Tech / Design",
       readOnly: true,
     },
     {
-      name: "body",
+      name: "aspects",
       type: "array",
-      title: "Body",
+      title: "Aspects",
       of: [
         {
           type: "projectStructureAspect",

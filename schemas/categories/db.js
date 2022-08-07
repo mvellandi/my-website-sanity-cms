@@ -1,5 +1,5 @@
 export default {
-  name: "database",
+  name: "category_database",
   title: "Database",
   type: "document",
   fields: [

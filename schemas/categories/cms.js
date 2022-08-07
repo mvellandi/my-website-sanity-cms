@@ -1,5 +1,5 @@
 export default {
-  name: "cms",
+  name: "category_cms",
   title: "CMS",
   type: "document",
   fields: [

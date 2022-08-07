@@ -1,5 +1,5 @@
 export default {
-  name: "app",
+  name: "category_app",
   title: "App",
   type: "document",
   fields: [
