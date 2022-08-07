@@ -19,12 +19,34 @@ export default {
     {
       name: "text",
       type: "array",
-      title: "Text",
+      title: "Paragraph(s)",
       of: [
         {
-          type: "block",
+          type: "richText",
+          title: "Paragraph(s)",
         },
       ],
+      hidden: ({ parent, value }) => {
+        return parent?.heading === "Process" || !parent?.heading;
+      },
+    },
+    {
+      name: "subtopic",
+      type: "array",
+      title: "Subtopic",
+      of: [
+        {
+          type: "headingRichText",
+          title: "Heading with Paragraph(s)",
+        },
+        {
+          type: "richText",
+          title: "Paragraph(s)",
+        },
+      ],
+      hidden: ({ parent, value }) => {
+        return parent?.heading !== "Process" || !parent?.heading;
+      },
     },
   ],
 };

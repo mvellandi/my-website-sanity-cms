@@ -1,8 +1,13 @@
 export default {
-  name: "richText",
+  name: "headingRichText",
+  title: "Heading with Rich Text",
   type: "object",
-  title: "Rich Text",
   fields: [
+    {
+      name: "heading",
+      title: "Heading",
+      type: "string",
+    },
     {
       name: "body",
       type: "array",
@@ -10,9 +15,6 @@ export default {
       of: [
         {
           type: "block",
-        },
-        {
-          type: "graphicFigure",
         },
       ],
     },
