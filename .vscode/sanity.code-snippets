@@ -32,11 +32,23 @@
   "New Field: String": {
     "scope": "javascript,typescript",
     "prefix": "fstring",
-    "body": ["{", "	name: '$1',", "	title: '$2',", "	type: 'string',", "}"]
+    "body": ["{", " name: '$1',", " title: '$2',", "  type: 'string',", "}"]
   },
   "New Field: Text": {
     "scope": "javascript,typescript",
     "prefix": "ftext",
-    "body": ["{", "	name: '$1',", "	title: '$2',", "	type: 'text',", "}"]
+    "body": ["{", " name: '$1',", " title: '$2',", "  type: 'text',", "}"]
+  },
+  "New Field: Array": {
+    "scope": "javascript,typescript",
+    "prefix": "farray",
+    "body": [
+      "{",
+      " name: '$1',",
+      " title: '$2',",
+      " type: 'array',",
+      " of: [{ type: '$3'}],",
+      "}"
+    ]
   }
 }

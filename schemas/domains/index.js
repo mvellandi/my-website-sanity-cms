@@ -1,6 +1,7 @@
 // domains
 import project from "./project";
 import projectTopic from "./project/topic";
+import projectMedia from "./project/media";
 import projectStructure from "./project/structure";
 import projectStructureAspect from "./project/structureAspect";
 
@@ -12,6 +13,7 @@ import author from "./author";
 export default [
   project,
   projectTopic,
+  projectMedia,
   projectStructure,
   projectStructureAspect,
   article,

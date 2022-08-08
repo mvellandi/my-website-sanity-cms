@@ -35,7 +35,7 @@ export default {
       name: "sections",
       type: "array",
       title: "Sections",
-      initialValue: sectionTemplate,
+      // initialValue: sectionTemplate,
       of: [
         {
           type: "projectTopic",
@@ -43,7 +43,11 @@ export default {
         {
           type: "projectStructure",
         },
+        {
+          type: "projectMedia",
+        },
       ],
+      validation: (Rule) => Rule.unique(),
     },
   ],
   orderings: [
