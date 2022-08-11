@@ -11,7 +11,7 @@ export function entriesUnique(values, _context) {
   return true;
 }
 
-// unfortunately, this function can't be reused elsewhere
+// unfortunately, this function can only be used in structureAspect.js module
 export function entriesProvided(values, context) {
   // get the aspect's title based on its name
   const { title } = aspectTypes.find((a) => a.name === context.path.at(-1));
