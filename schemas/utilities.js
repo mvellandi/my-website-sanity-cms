@@ -1,4 +1,4 @@
-export function entriesUnique(values, context) {
+export function entriesUnique(values, _context) {
   // if there are duplicate entries
   if (values) {
     const refs = values.map((v) => v._ref);
