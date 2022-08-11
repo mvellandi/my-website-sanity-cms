@@ -1,4 +1,4 @@
-import { entriesUnique } from "../../utilities";
+import { entriesUnique } from "./utilities";
 
 export default {
   name: "projectStructure",
