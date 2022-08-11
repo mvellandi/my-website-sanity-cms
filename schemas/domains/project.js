@@ -1,5 +1,3 @@
-import sectionTemplate from "./project/sectionTemplate";
-
 export default {
   name: "project",
   type: "document",
@@ -30,24 +28,35 @@ export default {
       name: "completionDate",
       type: "date",
       title: "Completion Date",
+      initialValue: new Date().toISOString(),
     },
     {
-      name: "sections",
+      name: "summary",
       type: "array",
-      title: "Sections",
-      // initialValue: sectionTemplate,
-      of: [
-        {
-          type: "projectTopic",
-        },
-        {
-          type: "projectStructure",
-        },
-        {
-          type: "projectMedia",
-        },
-      ],
-      validation: (Rule) => Rule.unique(),
+      title: "Summary",
+      required: true,
+      of: [{ type: "block" }],
+    },
+    {
+      name: "features",
+      type: "array",
+      title: "Features",
+      required: false,
+      of: [{ type: "block" }],
+    },
+    {
+      name: "structure",
+      type: "projectStructure",
+      title: "Tech / Design Structure",
+      required: true,
+    },
+    {
+      name: "process",
+      type: "array",
+      title: "Process",
+      description: "Describe project's development process",
+      required: true,
+      of: [{ type: "headingRichText" }, { type: "richText" }],
     },
   ],
   orderings: [

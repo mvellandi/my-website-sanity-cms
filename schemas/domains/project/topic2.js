@@ -1,3 +1,10 @@
+const topics = [
+  { value: "Summary", title: "Summary" },
+  { value: "Features", title: "Features" },
+  { value: "Process", title: "Process" },
+  { value: "Project Links", title: "Project Links" },
+];
+
 export default {
   name: "projectTopic",
   type: "object",

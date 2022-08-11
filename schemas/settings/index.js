@@ -4,7 +4,7 @@ import navigation from "./navigation";
 
 export default [site, colors, navigation];
 
-export const displaySettings = [
+export const settings = [
   {
     name: "site",
     title: "Metadata",

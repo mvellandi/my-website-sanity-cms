@@ -1,8 +1,8 @@
 // /deskStructure.js
 import S from "@sanity/desk-tool/structure-builder";
-import { displaySettings } from "./schemas/settings";
-import { displayCategories } from "./schemas/categories";
-import { displayDomains } from "./schemas/domains";
+import { settings as displaySettings } from "./schemas/settings";
+import { categories as displayCategories } from "./schemas/categories";
+import { domains as displayDomains } from "./schemas/domains";
 
 import { parentList, singleChildItem, multiChildItem } from "./deskUtils";
 
