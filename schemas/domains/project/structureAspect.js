@@ -1,8 +1,4 @@
-import {
-  entriesProvided,
-  entriesUnique,
-  buildEntriesValidationRule,
-} from "../../utilities";
+import { entriesProvided, entriesUnique } from "../../utilities";
 
 /*
 function buildAspectValues(aspects) {
@@ -45,7 +41,11 @@ export default {
       type: "array",
       title: "Values",
       of: [{ type: "reference", to: [{ type: "category_app" }] }],
-      validation: buildEntriesValidationRule([entriesProvided, entriesUnique]),
+      // validation: buildEntriesValidationRule([entriesProvided, entriesUnique]),
+      validation: (Rule) => [
+        Rule.custom(entriesProvided),
+        Rule.custom(entriesUnique),
+      ],
       hidden: ({ parent, value }) => parent?.type !== "App" && !value,
     },
     {

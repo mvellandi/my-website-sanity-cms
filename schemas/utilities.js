@@ -1,4 +1,4 @@
-export function entriesUnique({ values }) {
+export function entriesUnique(values, context) {
   // if there are duplicate entries
   if (values) {
     const refs = values.map((v) => v._ref);
@@ -6,15 +6,18 @@ export function entriesUnique({ values }) {
       return "Please remove duplicate entries";
     }
   }
+  return true;
 }
 
-export function entriesProvided({ values, context }) {
+export function entriesProvided(values, context) {
   // if parent type is selected, but has no value
   if (
     (context.parent.type && !values) ||
     (Array.isArray(values) && values.length == 0)
   ) {
     return "Aspect(s) must have a value";
+  } else {
+    return true;
   }
 }
 
@@ -31,5 +34,5 @@ export function buildEntriesValidationRule(validators) {
       }
       return errorMsg ? errorMsg : true;
     });
-  }
+  };
 }
