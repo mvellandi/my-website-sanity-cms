@@ -1,7 +1,10 @@
+import { IoPerson as icon } from "react-icons/io5";
+
 export default {
   name: "author",
   type: "document",
   title: "Author",
+  icon,
   fields: [
     {
       name: "name",

@@ -1,7 +1,10 @@
+import { FaProjectDiagram as icon } from "react-icons/fa";
+
 export default {
   name: "project",
   type: "document",
   title: "Project",
+  icon,
   fields: [
     {
       name: "name",
@@ -62,6 +65,13 @@ export default {
         { type: "headingRichText", title: "Subheading and Text" },
         { type: "richText", title: "Text" },
       ],
+    },
+    {
+      name: "media",
+      type: "array",
+      title: "Media",
+      description: "Screenshot project images",
+      of: [{ type: "graphicFigure" }],
     },
   ],
   orderings: [

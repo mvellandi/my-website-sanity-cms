@@ -1,7 +1,10 @@
+import {MdOutlineToys as icon} from 'react-icons/md';
+
 export default {
   name: "toy",
   type: "document",
   title: "Toy",
+  icon,
   fields: [
     {
       name: "name",

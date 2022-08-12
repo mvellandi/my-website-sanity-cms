@@ -1,7 +1,10 @@
+import { IoDocumentTextOutline as icon } from "react-icons/io5";
+
 export default {
   name: "page",
   type: "document",
   title: "Page",
+  icon,
   fields: [
     {
       name: "title",

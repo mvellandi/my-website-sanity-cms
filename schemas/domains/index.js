@@ -19,25 +19,33 @@ export default [
   author,
 ];
 
+console.log("Page Icon:\n", page.icon);
+console.log("Author Icon:\n", author.icon);
+
 export const domains = [
   {
-    title: "Project",
     name: "project",
+    title: "Project",
+    icon: project.icon,
   },
   {
-    title: "Article",
     name: "article",
+    title: "Article",
+    icon: article.icon,
   },
   {
-    title: "Toy",
     name: "toy",
+    title: "Toy",
+    icon: toy.icon,
   },
   {
-    title: "Page",
     name: "page",
+    title: "Page",
+    icon: page.icon,
   },
   {
-    title: "Author",
     name: "author",
+    title: "Author",
+    icon: author.icon,
   },
 ];

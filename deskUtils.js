@@ -1,9 +1,18 @@
 import S from "@sanity/desk-tool/structure-builder";
 
-export function parentList({ parentTitle, childTitle, childItems }) {
+export function parentList({
+  parentTitle,
+  childTitle,
+  childItems,
+  icon,
+  showChildIcons,
+}) {
   return S.listItem()
     .title(parentTitle)
-    .child(S.list().title(childTitle).items(childItems));
+    .icon(icon)
+    .child(
+      S.list().title(childTitle).showIcons(showChildIcons).items(childItems)
+    );
 }
 
 // singleton, ex: website settings
@@ -14,8 +23,8 @@ export function singleChildItem({ name, title }) {
 }
 
 // multi-record document, ex: project, article, page, author
-export function multiChildItem({ name, title }) {
-  return S.listItem().title(title).child(S.documentTypeList(name));
+export function multiChildItem({ name, title, icon }) {
+  return S.listItem().title(title).icon(icon).child(S.documentTypeList(name));
 }
 
 export function listNames(list) {

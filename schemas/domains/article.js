@@ -1,7 +1,10 @@
+import { RiArticleLine as icon } from "react-icons/ri";
+
 export default {
   name: "article",
   type: "document",
   title: "Article",
+  icon,
   fields: [
     {
       name: "title",
