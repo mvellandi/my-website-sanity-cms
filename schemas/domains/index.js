@@ -19,9 +19,6 @@ export default [
   author,
 ];
 
-console.log("Page Icon:\n", page.icon);
-console.log("Author Icon:\n", author.icon);
-
 export const domains = [
   {
     name: "project",
