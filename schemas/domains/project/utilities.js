@@ -2,10 +2,21 @@ import { aspectTypes } from "./structureAspect";
 
 export function entriesUnique(values, _context) {
   // if there are duplicate entries
+  const errorMsg = "Please remove duplicate entries";
   if (values) {
-    const refs = values.map((v) => v._ref);
-    if (new Set(refs).size !== values.length) {
-      return "Please remove duplicate entries";
+    // if entries are object types
+    if (values[0].type) {
+      const types = values.map((v) => v.type);
+      if (new Set(types).size !== values.length) {
+        return errorMsg;
+      }
+    }
+    // if entries are reference types
+    else if (values[0]._ref) {
+      const refs = values.map((v) => v._ref);
+      if (new Set(refs).size !== values.length) {
+        return errorMsg;
+      }
     }
   }
   return true;
