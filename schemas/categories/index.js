@@ -1,47 +1,46 @@
+import { cms } from "./icons";
 import {
-  stack,
-  handshake,
-  library,
-  cms,
-  code,
-  database,
-  pen,
-  envelope,
-  tool,
-  warehouse,
-  beaker,
-} from "../../icons";
+  FaRegHandshake as handshake,
+  FaWarehouse as warehouse,
+} from "react-icons/fa";
+import { FiPenTool as pen } from "react-icons/fi";
+import { GoTools as tool } from "react-icons/go";
+import { GrTest as beaker } from "react-icons/gr";
+import { HiLibrary as library, HiOutlineCode as code } from "react-icons/hi";
+import { MdOutlineEmail as envelope } from "react-icons/md";
+import { ImDatabase as database } from "react-icons/im";
+import { RiStackFill as stack } from "react-icons/ri";
 
 export const categories = [
   {
     title: "App Framework",
     name: "category_app",
     fieldTitle: "App Framework Name",
-    icon: stack,
+    icon: () => stack({ size: "1.6rem" }),
   },
   {
     title: "CMS",
     name: "category_cms",
     fieldTitle: "CMS Name",
-    icon: cms,
+    icon: () => cms({ width: "80%" }),
   },
   {
     title: "Code Language",
     name: "category_codeLanguage",
     fieldTitle: "Programming Language Name",
-    icon: code,
+    icon: () => code({ size: "1.7rem" }),
   },
   {
     title: "Code Library",
     name: "category_codeLibrary",
     fieldTitle: "Code Library Name",
-    icon: library,
+    icon: () => library({ size: "1.7rem" }),
   },
   {
     title: "CRM",
     name: "category_crm",
     fieldTitle: "CRM Name",
-    icon: handshake,
+    icon: () => handshake({ size: "1.9rem" }),
   },
   {
     title: "Database",
@@ -53,13 +52,13 @@ export const categories = [
     title: "Design",
     name: "category_design",
     fieldTitle: "Design Tool Name",
-    icon: pen,
+    icon: () => pen({ size: "1.5rem" }),
   },
   {
     title: "ESP",
     name: "category_esp",
     fieldTitle: "Email Service Provider Name",
-    icon: envelope,
+    icon: () => envelope({ size: "1.7rem" }),
   },
   {
     title: "General Tool",
@@ -71,7 +70,7 @@ export const categories = [
     title: "Host",
     name: "category_host",
     fieldTitle: "Host Provider Name",
-    icon: warehouse,
+    icon: () => warehouse({ size: "1.4rem" }),
   },
   {
     title: "Testing",

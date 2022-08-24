@@ -17,4 +17,13 @@ export default {
       validation: (Rule) => [Rule.custom(entriesUnique)],
     },
   ],
+  // preview: {
+  //   select: { icon },
+  //   prepare(selection) {
+  //     const { icon } = selection
+  //     return {
+
+  //     }
+  //   }
+  // }
 };

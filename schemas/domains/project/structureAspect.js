@@ -1,6 +1,15 @@
 import { entriesProvided, entriesUnique } from "./utilities";
+// import { categories } from "../../categories";
 
-export const aspectTypes = [
+// const at = categories.map(c => {
+//   return {
+//     value: c.title,
+//     title: c.title,
+//     name: ``
+//   }
+// })
+
+const aspectTypes = [
   { value: "App", title: "App", name: "app" },
   { value: "CMS", title: "CMS", name: "cms" },
   { value: "Code", title: "Code", name: "codeLanguage" },

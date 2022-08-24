@@ -1,4 +1,4 @@
-import { person as icon } from "../../icons";
+import { IoPerson as icon } from "react-icons/io5";
 
 export default {
   name: "author",

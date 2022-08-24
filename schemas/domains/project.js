@@ -1,10 +1,10 @@
-import { project as icon } from "../../icons";
+import { FaProjectDiagram as icon } from "react-icons/fa";
 
 export default {
   name: "project",
   type: "document",
   title: "Project",
-  icon,
+  icon: () => icon({ size: "1.5rem" }),
   fields: [
     {
       name: "name",

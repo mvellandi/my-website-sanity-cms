@@ -1,10 +1,10 @@
-import { article as icon } from "../../icons";
+import { RiArticleLine as icon } from "react-icons/ri";
 
 export default {
   name: "article",
   type: "document",
   title: "Article",
-  icon,
+  icon: () => icon({ size: "1.6rem" }),
   fields: [
     {
       name: "title",

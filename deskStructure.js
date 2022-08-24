@@ -5,7 +5,8 @@ import { categories as displayCategories } from "./schemas/categories";
 import { domains as displayDomains } from "./schemas/domains";
 
 // icons
-import { tag as categoriesIcon, gear as settingsIcon } from "./icons";
+import { FiTag as categoriesIcon } from "react-icons/fi";
+import { VscSettingsGear as settingsIcon } from "react-icons/vsc";
 
 import { parentList, singleChildItem, multiChildItem } from "./deskUtils";
 
@@ -16,7 +17,7 @@ const structuredCategories = displayCategories.map((s) =>
 
 const settings = parentList({
   parentTitle: "Settings",
-  icon: settingsIcon,
+  icon: () => settingsIcon({ size: "1.3rem" }),
   childTitle: "Website Settings",
   showChildIcons: false,
   childItems: structuredSettings,
