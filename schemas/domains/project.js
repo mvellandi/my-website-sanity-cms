@@ -1,4 +1,4 @@
-import { FaProjectDiagram as icon } from "react-icons/fa";
+import { project as icon } from "../../icons";
 
 export default {
   name: "project",

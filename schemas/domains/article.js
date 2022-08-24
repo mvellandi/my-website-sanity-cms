@@ -1,4 +1,4 @@
-import { RiArticleLine as icon } from "react-icons/ri";
+import { article as icon } from "../../icons";
 
 export default {
   name: "article",

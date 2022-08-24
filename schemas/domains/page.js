@@ -1,4 +1,4 @@
-import { IoDocumentTextOutline as icon } from "react-icons/io5";
+import { page as icon } from "../../icons";
 
 export default {
   name: "page",

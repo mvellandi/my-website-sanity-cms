@@ -1,4 +1,4 @@
-import {MdOutlineToys as icon} from 'react-icons/md';
+import { toy as icon } from "../../icons";
 
 export default {
   name: "toy",

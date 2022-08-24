@@ -5,8 +5,7 @@ import { categories as displayCategories } from "./schemas/categories";
 import { domains as displayDomains } from "./schemas/domains";
 
 // icons
-import { FiTag as categoriesIcon } from "react-icons/fi";
-import { VscSettingsGear as settingsIcon } from "react-icons/vsc";
+import { tag as categoriesIcon, gear as settingsIcon } from "./icons";
 
 import { parentList, singleChildItem, multiChildItem } from "./deskUtils";
 
