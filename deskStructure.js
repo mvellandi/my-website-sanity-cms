@@ -11,7 +11,7 @@ import { parentList, singleChildItem, multiChildItem } from "./deskUtils";
 
 const structuredSettings = displaySettings.map((s) => singleChildItem(s));
 const structuredCategories = displayCategories.map((s) =>
-  multiChildItem({ ...s, icon: categoriesIcon })
+  multiChildItem({ ...s, icon: s.icon || categoriesIcon })
 );
 
 const settings = parentList({
