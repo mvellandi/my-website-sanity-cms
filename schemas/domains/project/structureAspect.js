@@ -1,39 +1,24 @@
 import { entriesProvided, entriesUnique } from "./utilities";
-// import { categories } from "../../categories";
+import categories from "../../categories";
 
-// const at = categories.map(c => {
-//   return {
-//     value: c.title,
-//     title: c.title,
-//     name: ``
-//   }
-// })
-
-const aspectTypes = [
-  { value: "App", title: "App", name: "app" },
-  { value: "CMS", title: "CMS", name: "cms" },
-  { value: "Code", title: "Code", name: "codeLanguage" },
-  { value: "Libraries", title: "Code Libraries", name: "codeLibrary" },
-  { value: "CRM", title: "CRM", name: "crm" },
-  { value: "Database", title: "Database", name: "database" },
-  { value: "Design", title: "Design", name: "design" },
-  { value: "ESP", title: "ESP", name: "esp" },
-  { value: "Host", title: "Host", name: "host" },
-  { value: "Testing", title: "Testing", name: "testing" },
-  { value: "Tools", title: "Tools", name: "tool" },
-];
-
-const aspectValues = aspectTypes.map((a) => {
+const aspects = categories.map(({ title }) => {
   return {
-    name: a.name,
+    title,
+    value: title,
+  };
+});
+
+const aspectValues = categories.map(({ name, title }) => {
+  return {
+    name: name.split("category_")[1],
     type: "array",
     title: "Values",
-    of: [{ type: "reference", to: [{ type: `category_${a.name}` }] }],
+    of: [{ type: "reference", to: [{ type: name }] }],
     validation: (Rule) => [
       Rule.custom(entriesProvided),
       Rule.custom(entriesUnique),
     ],
-    hidden: ({ parent, value }) => parent?.type !== a.value && !value,
+    hidden: ({ parent, value }) => parent?.aspect !== title && !value,
   };
 });
 
@@ -43,11 +28,11 @@ export default {
   title: "Aspect",
   fields: [
     {
-      name: "type",
+      name: "aspect",
       type: "string",
-      title: "Type",
+      title: "Aspect",
       options: {
-        list: [...aspectTypes],
+        list: [...aspects],
       },
       readOnly: ({ value }) => {
         return value ? true : false;

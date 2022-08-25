@@ -1,13 +1,13 @@
-import { aspectTypes } from "./structureAspect";
+import categories from "../../categories";
 
 export function entriesUnique(values, _context) {
   // if there are duplicate entries
   const errorMsg = "Please remove duplicate entries";
   if (values) {
     // if entries are object types
-    if (values[0].type) {
-      const types = values.map((v) => v.type);
-      if (new Set(types).size !== values.length) {
+    if (values[0].aspect) {
+      const aspects = values.map((v) => v.aspect);
+      if (new Set(aspects).size !== values.length) {
         return errorMsg;
       }
     }
@@ -23,12 +23,15 @@ export function entriesUnique(values, _context) {
 }
 
 // unfortunately, this function can only be used in structureAspect.js module
+// or where categories are relevant
 export function entriesProvided(values, context) {
   // get the aspect's title based on its name
-  const { title } = aspectTypes.find((a) => a.name === context.path.at(-1));
-  // if parent type is selected, but has no value
+  const { title } = categories.find(
+    (c) => c.name.split("category_")[1] === context.path.at(-1)
+  );
+  // if parent aspect is selected, but has no value
   if (
-    (context.parent.type === title && !values) ||
+    (context.parent.aspect === title && !values) ||
     (Array.isArray(values) && values.length == 0)
   ) {
     return "Aspect(s) must have a value";

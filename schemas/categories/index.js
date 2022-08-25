@@ -81,15 +81,16 @@ export const categories = [
 ];
 
 // create categories
-export default categories.map((cat) => {
+export default categories.map(({ name, title, icon, fieldTitle }) => {
   return {
-    name: cat.name,
-    title: cat.title,
+    name,
+    title,
     type: "document",
+    icon,
     fields: [
       {
         name: "name",
-        title: cat.fieldTitle,
+        title: fieldTitle,
         type: "string",
       },
     ],
