@@ -43,7 +43,6 @@ export default {
   preview: {
     select: { aspect: "aspect" },
     prepare({ aspect }) {
-      console.log("aspect:", aspect);
       return {
         title: aspect,
         media: categories.find((c) => c.title === aspect)["icon"],
