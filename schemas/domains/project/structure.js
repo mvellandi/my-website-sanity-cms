@@ -1,4 +1,9 @@
 import { entriesUnique } from "./utilities";
+import at from "./structureAspects.js";
+
+const aspectTypes = at.map(({ name }) => {
+  return { type: name };
+});
 
 export default {
   name: "projectStructure",
@@ -9,11 +14,7 @@ export default {
       name: "aspects",
       type: "array",
       title: "Aspects",
-      of: [
-        {
-          type: "projectStructureAspect",
-        },
-      ],
+      of: [...aspectTypes],
       validation: (Rule) => [Rule.custom(entriesUnique)],
     },
   ],

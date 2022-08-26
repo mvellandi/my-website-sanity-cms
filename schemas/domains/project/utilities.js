@@ -1,18 +1,16 @@
-import categories from "../../categories";
-
 export function entriesUnique(values, _context) {
   // if there are duplicate entries
   const errorMsg = "Please remove duplicate entries";
   if (values) {
-    // if entries are object types
-    if (values[0].aspect) {
-      const aspects = values.map((v) => v.aspect);
-      if (new Set(aspects).size !== values.length) {
+    // if entries are NOT references types
+    if (values[0]._type !== "reference") {
+      const entries = values.map((v) => v._type);
+      if (new Set(entries).size !== values.length) {
         return errorMsg;
       }
     }
     // if entries are reference types
-    else if (values[0]._ref) {
+    else if (values[0]._type === "reference") {
       const refs = values.map((v) => v._ref);
       if (new Set(refs).size !== values.length) {
         return errorMsg;
@@ -21,25 +19,6 @@ export function entriesUnique(values, _context) {
   }
   return true;
 }
-
-// unfortunately, this function can only be used in structureAspect.js module
-// or where categories are relevant
-export function entriesProvided(values, context) {
-  // get the aspect's title based on its name
-  const { title } = categories.find(
-    (c) => c.name.split("category_")[1] === context.path.at(-1)
-  );
-  // if parent aspect is selected, but has no value
-  if (
-    (context.parent.aspect === title && !values) ||
-    (Array.isArray(values) && values.length == 0)
-  ) {
-    return "Aspect(s) must have a value";
-  } else {
-    return true;
-  }
-}
-
 // unused function to combine validation functions while providing a closure around function args.
 // function buildEntriesValidationRule(validators) {
 //   return function validateEntries(Rule) {

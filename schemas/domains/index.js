@@ -1,24 +1,25 @@
 // domains
 import project from "./project";
-// import projectMedia from "./project/media";
-import projectStructure from "./project/structure";
-import projectStructureAspect from "./project/structureAspect";
+import projectStructure from "./project/structure.js";
+import projectStructureAspects from "./project/structureAspects.js";
 
 import article from "./article";
 import toy from "./toy";
 import page from "./page";
 import author from "./author";
 
+// For main schema.js
 export default [
   project,
   projectStructure,
-  projectStructureAspect,
+  ...projectStructureAspects,
   article,
   toy,
   page,
   author,
 ];
 
+// for Structure Builder
 export const domains = [
   {
     name: "project",
