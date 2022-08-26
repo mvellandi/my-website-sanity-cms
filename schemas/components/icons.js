@@ -1,11 +1,12 @@
 import React from "react";
 
-const headingRichText = ({ width }) => (
+const headingRichText = ({ scale }) => (
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 611 490.5"
-    width={width}
+    width={scale}
+    height={scale}
   >
     <rect width="611" height="168.11" />
     <rect y="215.85" width="245.03" height="25" />
@@ -18,12 +19,13 @@ const headingRichText = ({ width }) => (
   </svg>
 );
 
-const richText = ({ width }) => (
+const richText = ({ scale }) => (
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 611 491.45"
-    width={width}
+    width={scale}
+    height={scale}
   >
     <rect width="611" height="25" />
     <rect y="93.1" width="238.89" height="25" />
