@@ -11,6 +11,7 @@ import { MdOutlineEmail as envelope } from "react-icons/md";
 import { ImDatabase as database } from "react-icons/im";
 import { RiStackFill as stack } from "react-icons/ri";
 
+// for Structure Builder
 export const categories = [
   {
     title: "App Framework",
@@ -80,7 +81,7 @@ export const categories = [
   },
 ];
 
-// create categories
+// For main schema.js
 export default categories.map(({ name, title, icon, fieldTitle }) => {
   return {
     name,
