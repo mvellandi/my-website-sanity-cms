@@ -1,4 +1,5 @@
 import { FaProjectDiagram as icon } from "react-icons/fa";
+import SlugInput from "sanity-plugin-prefixed-slug";
 
 export default {
   name: "project",
@@ -10,6 +11,25 @@ export default {
       name: "name",
       type: "string",
       title: "Name",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "slug",
+      type: "slug",
+      inputComponent: SlugInput,
+      options: {
+        source: "name",
+        urlPrefix: "https://localhost:3000/projects/",
+        // Use isUnique/maxLength just like you would w/ the regular slug field
+        // isUnique: MyCustomIsUniqueFunction,
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            //Remove spaces
+            .replace(/\s+/g, "-")
+            //Remove special characters
+            .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
+      },
       validation: (Rule) => Rule.required(),
     },
     {
@@ -26,7 +46,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "logo",
+      name: "thumb",
       type: "graphicImage",
       title: "Project Logo",
     },
