@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "vellandi"
-  },
   "api": {
     "projectId": "nkdwfm1n",
     "dataset": "production"
+  },
+  "project": {
+    "name": "vellandi"
   },
   "plugins": [
     "@sanity/base",
