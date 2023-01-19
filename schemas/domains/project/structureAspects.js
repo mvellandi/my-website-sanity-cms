@@ -1,15 +1,22 @@
 import { entriesUnique } from "./utilities";
-import categories from "../../categories";
+import { categories } from "../../categories";
 
 // For the preview, we're statically looking up references that may not exist in the array
 // since it's not possible to see how many values there are. There shouldn't be more than 6, so that's a
 // hard limit set. If some are undefined, we'll filter out before displaying
-export default categories.map(({ name, title }) => {
+export default categories.map(({ name, title, frontendTitle }) => {
   return {
     name: `projectStructure_${name.split("category_")[1]}`,
     title,
     type: "object",
     fields: [
+      {
+        name: "aspect",
+        type: "string",
+        hidden: true,
+        readOnly: true,
+        initialValue: `${frontendTitle}`,
+      },
       {
         name: "values",
         type: "array",
