@@ -18,7 +18,7 @@ export default {
       rows: 3,
     },
     {
-      name: "thumb",
+      name: "coverImage",
       type: "graphicImage",
       title: "Toy Thumbnail",
     },

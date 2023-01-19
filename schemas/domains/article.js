@@ -38,7 +38,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "thumb",
+      name: "coverImage",
       type: "graphicImage",
       title: "Article Thumbnail",
     },

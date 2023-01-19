@@ -23,7 +23,7 @@ export default {
       title: "Full Bio",
     },
     {
-      name: "image",
+      name: "coverImage",
       type: "graphicImage",
       title: "Portrait Photo",
     },
