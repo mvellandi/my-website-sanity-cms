@@ -46,7 +46,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "thumb",
+      name: "coverImage",
       type: "graphicImage",
       title: "Project Logo",
     },
@@ -85,6 +85,13 @@ export default {
         { type: "headingRichText", title: "Subheading and Text" },
         { type: "richText", title: "Text" },
       ],
+    },
+    {
+      name: "links",
+      type: "array",
+      title: "Project Links",
+      description: "Links to project's website, GitHub, etc.",
+      of: [{ type: "textLink" }],
     },
     {
       name: "media",
