@@ -76,17 +76,6 @@ export default {
       title: "Tech / Design Structure",
     },
     {
-      name: "process",
-      type: "array",
-      title: "Process",
-      description: "Describe project's development process",
-      validation: (Rule) => Rule.required(),
-      of: [
-        { type: "headingRichText", title: "Subheading and Text" },
-        { type: "richText", title: "Text" },
-      ],
-    },
-    {
       name: "links",
       type: "array",
       title: "Project Links",
@@ -99,6 +88,18 @@ export default {
       title: "Media",
       description: "Screenshot project images",
       of: [{ type: "graphicFigure" }],
+    },
+    {
+      name: "process",
+      type: "array",
+      title: "Process",
+      description: "Describe project's development process",
+      validation: (Rule) => Rule.required(),
+      of: [
+        { type: "richText", title: "'Process' Heading and Text" },
+        { type: "headingRichText", title: "Custom Heading and Text" },
+        { type: "outline", title: "Outline" },
+      ],
     },
   ],
   orderings: [
