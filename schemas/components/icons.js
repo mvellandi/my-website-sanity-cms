@@ -1,4 +1,7 @@
 import React from "react";
+import { AiOutlineBars } from "react-icons/ai";
+
+const outline = ({ size }) => AiOutlineBars({ size });
 
 const headingRichText = ({ scale }) => (
   <svg
@@ -39,4 +42,4 @@ const richText = ({ scale }) => (
   </svg>
 );
 
-export { headingRichText, richText };
+export { outline, headingRichText, richText };
