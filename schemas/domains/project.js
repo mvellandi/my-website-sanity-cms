@@ -68,7 +68,19 @@ export default {
       name: "features",
       type: "array",
       title: "Features",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          styles: [
+            { title: "Normal", value: "normal" },
+            { title: "List Heading", value: "h3" },
+          ],
+          lists: [{ title: "Bullet", value: "bullet" }],
+          marks: {
+            decorators: [],
+          },
+        },
+      ],
     },
     {
       name: "structure",
