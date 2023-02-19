@@ -106,7 +106,6 @@ export default {
       type: "array",
       title: "Process",
       description: "Describe project's development process",
-      validation: (Rule) => Rule.required(),
       of: [
         { type: "richText", title: "'Process' Heading and Text" },
         { type: "headingRichText", title: "Custom Heading and Text" },
