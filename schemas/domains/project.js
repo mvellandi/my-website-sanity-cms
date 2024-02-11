@@ -1,5 +1,5 @@
 import { FaProjectDiagram as icon } from "react-icons/fa";
-import SlugInput from "sanity-plugin-prefixed-slug";
+import {SlugInput} from "sanity-plugin-prefixed-slug";
 
 export default {
   name: "project",
@@ -16,7 +16,9 @@ export default {
     {
       name: "slug",
       type: "slug",
-      inputComponent: SlugInput,
+      components: {
+        input: SlugInput
+      },
       options: {
         source: "name",
         urlPrefix: "https://localhost:3000/projects/",
@@ -28,7 +30,7 @@ export default {
             //Remove spaces
             .replace(/\s+/g, "-")
             //Remove special characters
-            .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
+            .replace(/[&#,+()$~%.'":*?<>{}]/g, ""),
       },
       validation: (Rule) => Rule.required(),
     },

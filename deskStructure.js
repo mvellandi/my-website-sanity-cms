@@ -1,39 +1,39 @@
 // /deskStructure.js
-import S from "@sanity/desk-tool/structure-builder";
-import { settings as displaySettings } from "./schemas/settings";
-import { categories as displayCategories } from "./schemas/categories";
-import { domains as displayDomains } from "./schemas/domains";
+import {settings as displaySettings} from './schemas/settings'
+import {categories as displayCategories} from './schemas/categories'
+import {domains as displayDomains} from './schemas/domains'
 
 // icons
-import { FiTag as categoriesIcon } from "react-icons/fi";
-import { VscSettingsGear as settingsIcon } from "react-icons/vsc";
+import {FiTag as categoriesIcon} from 'react-icons/fi'
+import {VscSettingsGear as settingsIcon} from 'react-icons/vsc'
 
-import { parentList, singleChildItem, multiChildItem } from "./deskUtils";
+import {parentList, singleChildItem, multiChildItem} from './deskUtils'
 
-const structuredSettings = displaySettings.map((s) => singleChildItem(s));
-const structuredCategories = displayCategories.map((s) =>
-  multiChildItem({ ...s, icon: s.icon || categoriesIcon })
-);
+export default (S) => {
+  const structuredSettings = displaySettings.map((s) => singleChildItem(S, s))
+  const structuredCategories = displayCategories.map((c) =>
+    multiChildItem(S, {...c, icon: c.icon || categoriesIcon}),
+  )
 
-const settings = parentList({
-  parentTitle: "Settings",
-  icon: () => settingsIcon({ size: "1.3rem" }),
-  childTitle: "Website Settings",
-  showChildIcons: false,
-  childItems: structuredSettings,
-});
+  const domains = displayDomains.map((d) => multiChildItem(S, d))
 
-const categories = parentList({
-  parentTitle: "Categories",
-  icon: categoriesIcon,
-  childTitle: "Project Structure",
-  showChildIcons: true,
-  childItems: structuredCategories,
-});
+  const categories = parentList(S, {
+    parentTitle: 'Categories',
+    icon: categoriesIcon,
+    childTitle: 'Project Structure',
+    showChildIcons: true,
+    childItems: structuredCategories,
+  })
 
-const domains = displayDomains.map((s) => multiChildItem(s));
+  const settings = parentList(S, {
+    parentTitle: 'Settings',
+    icon: () => settingsIcon({size: '1.3rem'}),
+    childTitle: 'Website Settings',
+    showChildIcons: false,
+    childItems: structuredSettings,
+  })
 
-export default () =>
-  S.list()
-    .title("Base")
-    .items([...domains, S.divider(), categories, settings]);
+  return S.list()
+    .title('Base')
+    .items([...domains, S.divider(), categories, settings])
+}

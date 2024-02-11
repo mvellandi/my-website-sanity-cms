@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-const cms = ({ width }) => (
+const cms = ({width}) => (
   <svg
     version="1.1"
     id="Layer_1"
@@ -45,6 +45,6 @@ const cms = ({ width }) => (
       />
     </g>
   </svg>
-);
+)
 
-export { cms };
+export {cms}
