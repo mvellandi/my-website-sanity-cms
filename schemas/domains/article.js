@@ -1,5 +1,5 @@
 import { RiArticleLine as icon } from "react-icons/ri";
-import SlugInput from "sanity-plugin-prefixed-slug";
+import {SlugInput} from "sanity-plugin-prefixed-slug";
 
 export default {
   name: "article",
@@ -21,7 +21,9 @@ export default {
     {
       name: "slug",
       type: "slug",
-      inputComponent: SlugInput,
+      components: {
+        input: SlugInput
+      },
       options: {
         source: "headline",
         urlPrefix: "https://localhost:3000/articles/",
