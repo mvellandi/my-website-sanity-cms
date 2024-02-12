@@ -42,7 +42,7 @@ export default {
             //Remove spaces
             .replace(/\s+/g, '-')
             //Remove special characters
-            .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ''),
+            .replace(/[&|/\\#,+()$~%.'":*?<>{}]/g, ''),
       },
       validation: (Rule) => Rule.required(),
     },
