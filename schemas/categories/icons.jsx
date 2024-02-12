@@ -6,7 +6,7 @@ const cms = ({width}) => (
     id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 560 490"
-    width={width}
+    width={width} fill="currentColor"
   >
     <g>
       <path d="M469.8,54.2c0,4.8-3.9,8.8-8.8,8.8c-4.8,0-8.8-3.9-8.8-8.8s3.9-8.8,8.8-8.8C465.9,45.5,469.8,49.4,469.8,54.2" />
