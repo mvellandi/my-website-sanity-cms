@@ -10,6 +10,7 @@ const headingRichText = ({ scale }) => (
     viewBox="0 0 611 490.5"
     width={scale}
     height={scale}
+    fill="currentColor"
   >
     <rect width="611" height="168.11" />
     <rect y="215.85" width="245.03" height="25" />
@@ -29,6 +30,7 @@ const richText = ({ scale }) => (
     viewBox="0 0 611 491.45"
     width={scale}
     height={scale}
+    fill="currentColor"
   >
     <rect width="611" height="25" />
     <rect y="93.1" width="238.89" height="25" />
