@@ -1,7 +1,7 @@
 // /deskStructure.js
-import {settings as displaySettings} from './schemas/settings'
-import {categories as displayCategories} from './schemas/categories'
-import {domains as displayDomains} from './schemas/domains'
+import {settings as displaySettings} from './schemas/settings/settings'
+import {categories as displayCategories} from './schemas/categories/categories'
+import {domains as displayDomains} from './schemas/domains/domains'
 
 // icons
 import {FiTag as categoriesIcon} from 'react-icons/fi'
