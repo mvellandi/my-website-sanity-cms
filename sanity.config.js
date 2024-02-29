@@ -1,8 +1,12 @@
+import deskStructure from './deskStructure'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas/schemas'
-import deskStructure from './deskStructure'
+
+// plugins
+import {visionTool} from '@sanity/vision'
+import {media, mediaAssetSource} from 'sanity-plugin-media'
+// import {codeInput} from '@sanity/code-input'
 // import {theme} from 'https://themer.sanity.build/api/hues'
 
 export default defineConfig({
@@ -18,7 +22,18 @@ export default defineConfig({
       structure: deskStructure,
     }),
     visionTool(),
+    media(),
+    // codeInput(),
   ],
+
+  form: {
+    // Don't use this plugin when selecting files only (but allow all other enabled asset sources)
+    file: {
+      assetSources: (previousAssetSources) => {
+        return previousAssetSources.filter((assetSource) => assetSource !== mediaAssetSource)
+      },
+    },
+  },
 
   tools: (prev, context) => {
     const isAdmin = context.currentUser.roles.find(({name}) => name === 'administrator')
