@@ -23,7 +23,6 @@ export default defineConfig({
     }),
     visionTool(),
     media(),
-    // codeInput(),
   ],
 
   form: {
