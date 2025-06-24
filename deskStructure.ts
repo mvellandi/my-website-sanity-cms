@@ -1,21 +1,21 @@
-// /deskStructure.js
-import {settings as displaySettings} from './schemas/settings/settings'
-import {categories as displayCategories} from './schemas/categories/categories'
-import {domains as displayDomains} from './schemas/domains/domains'
+import displaySettings from './schemas/settings/settings'
+import displayCategories from './schemas/categories/categories'
+import displayDomains from './schemas/domains/domains'
 
 // icons
 import {FiTag as categoriesIcon} from 'react-icons/fi'
 import {VscSettingsGear as settingsIcon} from 'react-icons/vsc'
 
 import {parentList, singleChildItem, multiChildItem} from './deskUtils'
+import type {StructureBuilder} from 'sanity/desk'
 
-export default (S) => {
-  const structuredSettings = displaySettings.map((s) => singleChildItem(S, s))
-  const structuredCategories = displayCategories.map((c) =>
+export default (S: StructureBuilder) => {
+  const structuredSettings = displaySettings.map((s: any) => singleChildItem(S, s))
+  const structuredCategories = displayCategories.map((c: any) =>
     multiChildItem(S, {...c, icon: c.icon || categoriesIcon}),
   )
 
-  const domains = displayDomains.map((d) => multiChildItem(S, d))
+  const domains = displayDomains.map((d: any) => multiChildItem(S, d))
 
   const categories = parentList(S, {
     parentTitle: 'Categories',
@@ -36,4 +36,4 @@ export default (S) => {
   return S.list()
     .title('Base')
     .items([...domains, S.divider(), categories, settings])
-}
+} 

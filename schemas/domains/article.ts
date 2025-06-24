@@ -1,60 +1,49 @@
 import {RiArticleLine as icon} from 'react-icons/ri'
-import {SlugInput} from 'sanity-plugin-prefixed-slug'
+import {defineField, defineType} from 'sanity'
 
-export default {
+export default defineType({
   name: 'article',
   type: 'document',
   title: 'Article',
   icon: () => icon({size: '1.6rem'}),
   fields: [
-    {
+    defineField({
       name: 'headline',
       type: 'string',
       title: 'Headline',
-    },
-    {
+    }),
+    defineField({
       name: 'subheading',
       type: 'text',
       title: 'Subheading',
       rows: 3,
-    },
-    {
+    }),
+    defineField({
       name: 'publicationDate',
       type: 'date',
       title: 'Publication Date',
       initialValue: new Date().toISOString(),
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
-      components: {
-        input: SlugInput,
-      },
+      title: 'Slug',
       options: {
         source: 'headline',
-        urlPrefix: 'https://localhost:3000/articles/',
-        // Use isUnique/maxLength just like you would w/ the regular slug field
-        // isUnique: MyCustomIsUniqueFunction,
-        slugify: (input) =>
-          input
-            .toLowerCase()
-            //Remove spaces
-            .replace(/\s+/g, '-')
-            //Remove special characters
-            .replace(/[&|/\\#,+()$~%.'":*?<>{}]/g, ''),
+        maxLength: 96,
       },
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'coverImage',
       type: 'graphicImage',
       title: 'Article Thumbnail',
-    },
-    {
+    }),
+    defineField({
       name: 'body',
       type: 'richText',
       title: 'Body',
-    },
+    }),
   ],
-}
+}) 

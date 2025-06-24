@@ -19,7 +19,7 @@ export default defineConfig({
 
   plugins: [
     structureTool({
-      structure: deskStructure,
+      structure: deskStructure as any,
     }),
     visionTool(),
     media(),
@@ -35,7 +35,7 @@ export default defineConfig({
   },
 
   tools: (prev, context) => {
-    const isAdmin = context.currentUser.roles.find(({name}) => name === 'administrator')
+    const isAdmin = context.currentUser?.roles.find(({name}) => name === 'administrator')
     if (isAdmin) {
       return prev
     }
@@ -43,20 +43,20 @@ export default defineConfig({
   },
 
   schema: {
-    types: schemaTypes,
+    types: schemaTypes as any,
   },
   document: {
     newDocumentOptions: (prev, {creationContext}) => {
       if (creationContext.type === 'global') {
-        return prev.filter((templateItem) => templateItem.templateId != 'settings')
+        return prev.filter((templateItem) => templateItem.templateId !== 'settings')
       }
       return prev
     },
     actions: (prev, {schemaType}) => {
       if (schemaType === 'settings') {
-        return prev.filter(({action}) => !['unpublish', 'delete', 'duplicate'].includes(action))
+        return prev.filter(({action}) => action && !['unpublish', 'delete', 'duplicate'].includes(action))
       }
       return prev
     },
   },
-})
+}) 
