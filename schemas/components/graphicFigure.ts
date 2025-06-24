@@ -19,4 +19,16 @@ export default defineType({
       title: 'Caption',
     }),
   ],
+  preview: {
+    select: {
+      media: 'image',
+      title: 'caption',
+    },
+    prepare({media, title}) {
+      return {
+        title: title || 'Figure',
+        media: media,
+      }
+    },
+  },
 }) 

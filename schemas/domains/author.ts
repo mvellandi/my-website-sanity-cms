@@ -28,4 +28,18 @@ export default defineType({
       },
     }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'bio',
+      media: 'avatar',
+    },
+    prepare({title, subtitle, media}) {
+      return {
+        title: title || 'Unnamed Author',
+        subtitle: subtitle ? subtitle.substring(0, 100) + (subtitle.length > 100 ? '...' : '') : 'No bio',
+        media: media,
+      }
+    },
+  },
 }) 

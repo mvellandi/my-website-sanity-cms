@@ -29,4 +29,16 @@ export default defineType({
       title: 'Body',
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'slug.current',
+    },
+    prepare({title, subtitle}) {
+      return {
+        title: title || 'Untitled Page',
+        subtitle: subtitle ? `/${subtitle}` : 'No slug',
+      }
+    },
+  },
 }) 

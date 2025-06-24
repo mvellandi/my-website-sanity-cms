@@ -46,4 +46,19 @@ export default defineType({
       title: 'Body',
     }),
   ],
+  preview: {
+    select: {
+      title: 'headline',
+      subtitle: 'subheading',
+      media: 'coverImage.image',
+      date: 'publicationDate',
+    },
+    prepare({title, subtitle, media, date}) {
+      return {
+        title: title || 'Untitled Article',
+        subtitle: subtitle ? subtitle.substring(0, 100) + (subtitle.length > 100 ? '...' : '') : date ? new Date(date).toLocaleDateString() : 'No subtitle',
+        media: media,
+      }
+    },
+  },
 }) 

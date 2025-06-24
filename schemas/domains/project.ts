@@ -38,4 +38,18 @@ export default defineType({
       },
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'description',
+      media: 'image',
+    },
+    prepare({title, subtitle, media}) {
+      return {
+        title: title || 'Untitled Project',
+        subtitle: subtitle ? subtitle.substring(0, 100) + (subtitle.length > 100 ? '...' : '') : 'No description',
+        media: media,
+      }
+    },
+  },
 }) 

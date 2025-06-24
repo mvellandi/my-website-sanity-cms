@@ -25,4 +25,18 @@ export default defineType({
       },
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'description',
+      media: 'logo',
+    },
+    prepare({title, subtitle, media}) {
+      return {
+        title: title || 'Site Settings',
+        subtitle: subtitle ? subtitle.substring(0, 100) + (subtitle.length > 100 ? '...' : '') : 'Website configuration',
+        media: media,
+      }
+    },
+  },
 }) 

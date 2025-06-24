@@ -30,4 +30,16 @@ export default defineType({
       rows: 4,
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'description',
+    },
+    prepare({title, subtitle}) {
+      return {
+        title: title || 'Untitled Toy',
+        subtitle: subtitle ? subtitle.substring(0, 100) + (subtitle.length > 100 ? '...' : '') : 'No description',
+      }
+    },
+  },
 }) 

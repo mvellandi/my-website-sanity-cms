@@ -2,17 +2,34 @@ import {defineType, defineField} from 'sanity'
 
 export default defineType({
   name: 'graphicImage',
-  type: 'image',
-  title: 'Graphic Image',
-  options: {
-    hotspot: true,
-  },
+  type: 'object',
+  title: 'Image',
   fields: [
+    defineField({
+      name: 'image',
+      type: 'image',
+      title: 'Image',
+      options: {
+        hotspot: true,
+      },
+    }),
     defineField({
       name: 'alt',
       type: 'string',
       title: 'Alt Text',
-      validation: (Rule) => Rule.required(),
     }),
   ],
+  preview: {
+    select: {
+      title: 'alt',
+      media: 'image',
+    },
+    prepare(selection) {
+      const {title, media} = selection
+      return {
+        title: title || 'Image',
+        media: media,
+      }
+    },
+  },
 }) 
