@@ -1,44 +1,45 @@
 import {defineType, defineField} from 'sanity'
-import {GiPuzzle as icon} from 'react-icons/gi'
+import {MdOutlineToys as icon} from 'react-icons/md'
 
 export default defineType({
   name: 'toy',
   type: 'document',
   title: 'Toy',
-  icon: () => icon({size: '1.3rem'}),
+  icon: () => icon({size: '1.7rem'}),
   fields: [
     defineField({
-      name: 'title',
+      name: 'name',
       type: 'string',
-      title: 'Title',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'slug',
-      type: 'slug',
-      title: 'Slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
+      title: 'Name',
     }),
     defineField({
       name: 'description',
       type: 'text',
-      title: 'Description',
-      rows: 4,
+      title: 'Short Description',
+      rows: 3,
+    }),
+    defineField({
+      name: 'coverImage',
+      type: 'graphicImage',
+      title: 'Toy Thumbnail',
+    }),
+    defineField({
+      name: 'url',
+      type: 'url',
+      title: 'URL',
     }),
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'name',
       subtitle: 'description',
+      media: 'coverImage.image',
     },
-    prepare({title, subtitle}) {
+    prepare({title, subtitle, media}) {
       return {
         title: title || 'Untitled Toy',
         subtitle: subtitle ? subtitle.substring(0, 100) + (subtitle.length > 100 ? '...' : '') : 'No description',
+        media: media,
       }
     },
   },

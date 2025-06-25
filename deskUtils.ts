@@ -1,4 +1,3 @@
-import type {StructureBuilder} from 'sanity/desk'
 import type {IconType} from 'react-icons'
 
 interface ParentListOptions {
@@ -20,7 +19,7 @@ interface MultiChildItemOptions {
   icon?: IconType | (() => JSX.Element) | any
 }
 
-export function parentList(S: StructureBuilder, {parentTitle, childTitle, childItems, icon, showChildIcons}: ParentListOptions) {
+export function parentList(S: any, {parentTitle, childTitle, childItems, icon, showChildIcons}: ParentListOptions) {
   return S.listItem()
     .title(parentTitle)
     .icon(icon)
@@ -28,12 +27,12 @@ export function parentList(S: StructureBuilder, {parentTitle, childTitle, childI
 }
 
 // singleton, ex: website settings
-export function singleChildItem(S: StructureBuilder, {name, title}: SingleChildItemOptions) {
+export function singleChildItem(S: any, {name, title}: SingleChildItemOptions) {
   return S.listItem().title(title).child(S.document().schemaType(name).documentId(name))
 }
 
 // multi-record document, ex: project, article, page, author
-export function multiChildItem(S: StructureBuilder, {name, title, icon}: MultiChildItemOptions) {
+export function multiChildItem(S: any, {name, title, icon}: MultiChildItemOptions) {
   return S.listItem().title(title).icon(icon).child(S.documentTypeList(name))
 }
 

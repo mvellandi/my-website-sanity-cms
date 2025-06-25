@@ -7,9 +7,8 @@ import {FiTag as categoriesIcon} from 'react-icons/fi'
 import {VscSettingsGear as settingsIcon} from 'react-icons/vsc'
 
 import {parentList, singleChildItem, multiChildItem} from './deskUtils'
-import type {StructureBuilder} from 'sanity/desk'
 
-export default (S: StructureBuilder) => {
+export default (S: any) => {
   const structuredSettings = displaySettings.map((s: any) => singleChildItem(S, s))
   const structuredCategories = displayCategories.map((c: any) =>
     multiChildItem(S, {...c, icon: c.icon || categoriesIcon}),
