@@ -18,6 +18,12 @@ export default defineType({
       type: 'string',
       title: 'Caption',
     }),
+    defineField({
+      name: 'alt',
+      type: 'string',
+      title: 'Alt Text',
+      description: 'Alternative text for accessibility',
+    }),
   ],
   preview: {
     select: {
