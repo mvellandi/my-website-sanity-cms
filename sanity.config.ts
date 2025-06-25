@@ -19,7 +19,7 @@ export default defineConfig({
 
   plugins: [
     structureTool({
-      structure: deskStructure as any,
+      structure: deskStructure,
     }),
     visionTool(),
     media(),
