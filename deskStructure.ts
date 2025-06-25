@@ -10,12 +10,15 @@ import categoriesDefault from './schemas/categories/categories'
 export default (S: StructureBuilder) => {
   const categoryTypeNames = categoriesDefault.map((c: any) => c.name);
   const settingsTypeNames = displaySettings.map((s: any) => s.name);
+  const excludedTypeNames = [
+    ...categoryTypeNames,
+    ...settingsTypeNames,
+    'media.tag',
+  ];
 
-  // All document types except categories
+  // All document types except categories, settings, and media.tag
   const baseItems = S.documentTypeListItems().filter(
-    (listItem) =>
-      !categoryTypeNames.includes(listItem.getId()) &&
-      !settingsTypeNames.includes(listItem.getId())
+    (listItem) => !excludedTypeNames.includes(listItem.getId())
   );
 
   // Create settings items
