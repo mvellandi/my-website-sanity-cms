@@ -1,5 +1,5 @@
 import {defineType, defineField} from 'sanity'
-import {FaUser as icon} from 'react-icons/fa'
+import {IoPerson as icon} from 'react-icons/io5'
 
 export default defineType({
   name: 'author',
@@ -11,35 +11,22 @@ export default defineType({
       name: 'name',
       type: 'string',
       title: 'Name',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'bio',
+      name: 'bio_short',
       type: 'text',
-      title: 'Bio',
-      rows: 4,
+      title: 'Short Bio',
+      rows: 3,
     }),
     defineField({
-      name: 'avatar',
-      type: 'image',
-      title: 'Avatar',
-      options: {
-        hotspot: true,
-      },
+      name: 'bio_full',
+      type: 'richText',
+      title: 'Full Bio',
+    }),
+    defineField({
+      name: 'coverImage',
+      type: 'graphicImage',
+      title: 'Portrait Photo',
     }),
   ],
-  preview: {
-    select: {
-      title: 'name',
-      subtitle: 'bio',
-      media: 'avatar',
-    },
-    prepare({title, subtitle, media}) {
-      return {
-        title: title || 'Unnamed Author',
-        subtitle: subtitle ? subtitle.substring(0, 100) + (subtitle.length > 100 ? '...' : '') : 'No bio',
-        media: media,
-      }
-    },
-  },
 }) 
