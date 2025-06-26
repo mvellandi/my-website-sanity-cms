@@ -16,6 +16,7 @@ export default defineConfig({
 
   projectId: 'nkdwfm1n',
   dataset: 'production',
+  studioHost: 'vellandi',
 
   plugins: [
     structureTool({
