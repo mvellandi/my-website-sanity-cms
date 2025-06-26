@@ -1,3 +1,4 @@
+import {defineType, defineField} from 'sanity'
 import {cms} from './icons'
 import {
   FaRegHandshake as handshake,
@@ -92,19 +93,19 @@ export const categories = [
   },
 ]
 
-// For main schema.js
+// For main schema.ts
 export default categories.map(({name, title, icon, fieldTitle}) => {
-  return {
+  return defineType({
     name,
     title,
     type: 'document',
     icon,
     fields: [
-      {
+      defineField({
         name: 'name',
         title: fieldTitle,
         type: 'string',
-      },
+      }),
     ],
-  }
+  })
 })
