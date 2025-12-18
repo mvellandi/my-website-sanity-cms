@@ -2,6 +2,7 @@
   "name": "vellandi",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "package.json",
   "author": "Mario Vellandi <mvellandi@hotmail.com>",
@@ -26,17 +27,17 @@
     "react-icons": "^5.0.1",
     "react-is": "^19.2.3",
     "sanity": "^5.0.1",
-    "sanity-plugin-media": "^3.0.3",
+    "sanity-plugin-media": "^4.1.1",
     "sanity-plugin-prefixed-slug": "^2.0.0",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@sanity/cli": "^5.0.1",
-    "@sanity/eslint-config-studio": "^3.0.1",
+    "@sanity/eslint-config-studio": "^5.0.2",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/styled-components": "^5.1.36",
-    "eslint": "^8.57.1",
+    "eslint": "^9.39.2",
     "prettier": "^3.7.4",
     "typescript": "^5.9.3"
   },
