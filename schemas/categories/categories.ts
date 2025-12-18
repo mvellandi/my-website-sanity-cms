@@ -1,14 +1,15 @@
 import {defineType, defineField} from 'sanity'
 import {cms} from './icons'
-import {
-  FaRegHandshake as handshake,
-  FaWarehouse as warehouse,
-} from 'react-icons/fa'
+import {FaRegHandshake as handshake, FaWarehouse as warehouse} from 'react-icons/fa'
 import {FiPenTool as pen} from 'react-icons/fi'
 import {GoTools as tool} from 'react-icons/go'
 import {GrTest as beaker} from 'react-icons/gr'
 import {HiLibrary as library, HiOutlineCode as code} from 'react-icons/hi'
-import {MdOutlineEmail as envelope, MdLockOutline as lock} from 'react-icons/md'
+import {
+  MdOutlineEmail as envelope,
+  MdLockOutline as lock,
+  MdPermMedia as media,
+} from 'react-icons/md'
 import {ImDatabase as database} from 'react-icons/im'
 import {RiStackFill as stack} from 'react-icons/ri'
 
@@ -71,9 +72,9 @@ export const categories = [
     icon: () => pen({size: '1.5rem'}),
   },
   {
-    title: 'ESP',
+    title: 'Email',
     name: 'category_esp',
-    fieldTitle: 'Email Service Provider Name',
+    fieldTitle: 'Email Tool/Host Name',
     frontendTitle: 'Email',
     icon: () => envelope({size: '1.7rem'}),
   },
@@ -90,6 +91,13 @@ export const categories = [
     fieldTitle: 'Host Provider Name',
     frontendTitle: 'Host',
     icon: () => warehouse({size: '1.4rem'}),
+  },
+  {
+    title: 'Media',
+    name: 'category_media',
+    fieldTitle: 'Media Tool Name',
+    frontendTitle: 'Media',
+    icon: () => media({size: '1.7rem'}),
   },
   {
     title: 'Testing',
