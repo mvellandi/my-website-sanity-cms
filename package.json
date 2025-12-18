@@ -21,10 +21,10 @@
     "@sanity/vision": "^3.94.0",
     "codemirror-lang-elixir": "^4.0.0",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.0.1",
-    "react-is": "^18.2.0",
+    "react-is": "^18.3.1",
     "sanity": "^3.94.0",
     "sanity-plugin-media": "^3.0.3",
     "sanity-plugin-prefixed-slug": "^2.0.0",
@@ -33,12 +33,12 @@
   "devDependencies": {
     "@sanity/cli": "^3.95.0",
     "@sanity/eslint-config-studio": "^3.0.1",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.10",
-    "@types/styled-components": "^5.1.34",
-    "eslint": "^8.6.0",
-    "prettier": "^3.0.2",
-    "typescript": "^5.1.6"
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@types/styled-components": "^5.1.36",
+    "eslint": "^8.57.1",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3"
   },
   "prettier": {
     "semi": false,
