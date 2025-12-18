@@ -6,4 +6,7 @@ export default defineCliConfig({
     dataset: 'production', // replace value with your own
   },
   studioHost: 'vellandi',
+  deployment: {
+    appId: '0f2c336d7931e9d6e9ef044d',
+  },
 }) 
