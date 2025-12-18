@@ -18,20 +18,20 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^4.22.0",
+    "@sanity/vision": "^5.0.1",
     "codemirror-lang-elixir": "^4.0.0",
     "prop-types": "^15.8.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-icons": "^5.0.1",
     "react-is": "^19.2.3",
-    "sanity": "^4.22.0",
+    "sanity": "^5.0.1",
     "sanity-plugin-media": "^3.0.3",
     "sanity-plugin-prefixed-slug": "^2.0.0",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {
-    "@sanity/cli": "^4.22.0",
+    "@sanity/cli": "^5.0.1",
     "@sanity/eslint-config-studio": "^3.0.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
