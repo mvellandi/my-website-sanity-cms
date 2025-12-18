@@ -8,7 +8,7 @@ import {FiPenTool as pen} from 'react-icons/fi'
 import {GoTools as tool} from 'react-icons/go'
 import {GrTest as beaker} from 'react-icons/gr'
 import {HiLibrary as library, HiOutlineCode as code} from 'react-icons/hi'
-import {MdOutlineEmail as envelope} from 'react-icons/md'
+import {MdOutlineEmail as envelope, MdLockOutline as lock} from 'react-icons/md'
 import {ImDatabase as database} from 'react-icons/im'
 import {RiStackFill as stack} from 'react-icons/ri'
 
@@ -20,6 +20,13 @@ export const categories = [
     fieldTitle: 'App Framework Name',
     frontendTitle: 'App',
     icon: () => stack({size: '1.6rem'}),
+  },
+  {
+    title: 'Authentication',
+    name: 'category_auth',
+    fieldTitle: 'Auth Provider Name',
+    frontendTitle: 'Auth',
+    icon: () => lock({size: '1.7rem'}),
   },
   {
     title: 'CMS',
