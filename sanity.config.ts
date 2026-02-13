@@ -6,6 +6,8 @@ import {schemaTypes} from './schemas/schemas'
 // plugins
 import {visionTool} from '@sanity/vision'
 import {media, mediaAssetSource} from 'sanity-plugin-media'
+import {dashboardTool} from '@sanity/dashboard'
+import {vercelWidget} from 'sanity-plugin-dashboard-widget-vercel'
 // import {codeInput} from '@sanity/code-input'
 // import {theme} from 'https://themer.sanity.build/api/hues'
 
@@ -24,6 +26,13 @@ export default defineConfig({
     }),
     visionTool(),
     media(),
+    dashboardTool({
+      widgets: [
+        vercelWidget({
+          deployHook: process.env.SANITY_STUDIO_VERCEL_DEPLOY_HOOK,
+        }),
+      ],
+    }),
   ],
 
   form: {
