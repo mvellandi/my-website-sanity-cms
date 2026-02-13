@@ -9,6 +9,8 @@ import {
   MdOutlineEmail as envelope,
   MdLockOutline as lock,
   MdPermMedia as media,
+  MdOndemandVideo as video,
+  MdGraphicEq as sound,
 } from 'react-icons/md'
 import {ImDatabase as database} from 'react-icons/im'
 import {RiStackFill as stack} from 'react-icons/ri'
@@ -100,11 +102,25 @@ export const categories = [
     icon: () => media({size: '1.7rem'}),
   },
   {
+    title: 'Sound',
+    name: 'category_sound',
+    fieldTitle: 'Sound Tool Name',
+    frontendTitle: 'Sound',
+    icon: () => sound({size: '1.7rem'}),
+  },
+  {
     title: 'Testing',
     name: 'category_testing',
     fieldTitle: 'Testing Tool Name',
     frontendTitle: 'Testing',
     icon: beaker,
+  },
+  {
+    title: 'Video',
+    name: 'category_video',
+    fieldTitle: 'Video Tool Name',
+    frontendTitle: 'Video',
+    icon: () => video({size: '1.7rem'}),
   },
 ]
 
