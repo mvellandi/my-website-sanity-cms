@@ -2,9 +2,9 @@ import {defineType, defineField} from 'sanity'
 import {MdOutlineToys as icon} from 'react-icons/md'
 
 export default defineType({
-  name: 'toy',
+  name: 'demo',
   type: 'document',
-  title: 'Toy',
+  title: 'Demo',
   icon: () => icon({size: '1.7rem'}),
   fields: [
     defineField({
@@ -21,7 +21,7 @@ export default defineType({
     defineField({
       name: 'coverImage',
       type: 'graphicImage',
-      title: 'Toy Thumbnail',
+      title: 'Demo Thumbnail',
     }),
     defineField({
       name: 'url',
@@ -37,7 +37,7 @@ export default defineType({
     },
     prepare({title, subtitle, media}) {
       return {
-        title: title || 'Untitled Toy',
+        title: title || 'Untitled Demo',
         subtitle: subtitle ? subtitle.substring(0, 100) + (subtitle.length > 100 ? '...' : '') : 'No description',
         media: media,
       }
