@@ -1,4 +1,3 @@
-import code from './code'
 import graphicFigure from './graphicFigure'
 import graphicImage from './graphicImage'
 import headingRichText from './headingRichText'
@@ -7,7 +6,6 @@ import richText from './richText'
 import textLink from './textLink'
 
 const components = [
-  code,
   graphicFigure,
   graphicImage,
   headingRichText,

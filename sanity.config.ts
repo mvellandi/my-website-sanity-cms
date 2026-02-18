@@ -8,7 +8,8 @@ import {visionTool} from '@sanity/vision'
 import {media, mediaAssetSource} from 'sanity-plugin-media'
 import {dashboardTool} from '@sanity/dashboard'
 import {vercelWidget} from 'sanity-plugin-dashboard-widget-vercel'
-// import {codeInput} from '@sanity/code-input'
+import {codeInput} from '@sanity/code-input'
+import {codeInputConfig} from './plugins/codeInputConfig'
 // import {theme} from 'https://themer.sanity.build/api/hues'
 
 export default defineConfig({
@@ -26,6 +27,7 @@ export default defineConfig({
     }),
     visionTool(),
     media(),
+    codeInput(codeInputConfig),
     dashboardTool({
       widgets: [
         vercelWidget({
