@@ -15,6 +15,7 @@
     "lint": "eslint .",
     "type-check": "tsc --noEmit"
   },
+  "packageManager": "pnpm@10.29.3",
   "keywords": [
     "sanity"
   ],
@@ -34,7 +35,7 @@
     "styled-components": "^6.1.15"
   },
   "devDependencies": {
-    "@sanity/cli": "^5.0.1",
+    "@sanity/cli": "^5.10.0",
     "@sanity/eslint-config-studio": "^5.0.2",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
@@ -42,6 +43,12 @@
     "eslint": "^9.39.2",
     "prettier": "^3.7.4",
     "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "unrs-resolver"
+    ]
   },
   "prettier": {
     "semi": false,
