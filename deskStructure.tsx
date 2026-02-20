@@ -16,8 +16,8 @@ const ArticlePreviewPane = (props: any) => {
     return <div style={{padding: 20}}>No slug set for this document.</div>
   }
   // Change this URL to match your Next.js preview route
-  const token = process.env.SANITY_API_TOKEN
-  const url = `https://vellandi.net/api/preview?secret=${token}&slug=${slug}`
+  const secret = process.env.SANITY_STUDIO_PREVIEW_SECRET
+  const url = `https://vellandi.net/api/preview?secret=${secret}&slug=${slug}`
   return <iframe src={url} style={{width: '100%', height: '100%', border: 0}} title="Preview" />
 }
 
