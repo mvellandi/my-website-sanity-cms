@@ -9,11 +9,11 @@ Sanity v5 CMS Studio for a personal portfolio website. Content types include pro
 ## Commands
 
 ```bash
-npm run dev          # Start dev server
-npm run build        # Production build
-npm run deploy       # Deploy to Sanity Cloud (studioHost: vellandi)
-npm run lint         # ESLint
-npm run type-check   # TypeScript check (tsc --noEmit)
+pnpm run dev          # Start dev server
+pnpm run build        # Production build
+pnpm run deploy       # Deploy to Sanity Cloud (studioHost: vellandi)
+pnpm run lint         # ESLint
+pnpm run type-check   # TypeScript check (tsc --noEmit)
 ```
 
 No test framework is configured.
