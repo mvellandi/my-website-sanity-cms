@@ -6,6 +6,12 @@ export default defineType({
   type: 'document',
   title: 'Author',
   icon: () => icon({size: '1.3rem'}),
+  preview: {
+    select: {
+      title: 'name',
+      media: 'coverImage.image',
+    },
+  },
   fields: [
     defineField({
       name: 'name',
@@ -29,4 +35,4 @@ export default defineType({
       title: 'Portrait Photo',
     }),
   ],
-}) 
+})
