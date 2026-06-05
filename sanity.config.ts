@@ -32,7 +32,7 @@ export default defineConfig({
       widgets: [
         vercelWidget({
           deployHook: process.env.SANITY_STUDIO_VERCEL_DEPLOY_HOOK,
-        }),
+        } as any),
       ],
     }),
   ],

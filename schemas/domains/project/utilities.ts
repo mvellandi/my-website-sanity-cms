@@ -1,8 +1,4 @@
-interface ValidationContext {
-  // Add any context properties if needed
-}
-
-export function entriesUnique(values: any[] | undefined, _context: ValidationContext): string | true {
+export function entriesUnique(values: any[] | undefined, _context: any): string | true {
   // if there are duplicate entries
   const errorMsg = 'Please remove duplicate entries'
   if (values && values.length > 0) {
